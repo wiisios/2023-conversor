@@ -1,0 +1,20 @@
+<div>
+
+
+    <p>{{coins.name.charAt(0).toUpperCase() +coins.name.slice(1)}}</p>
+    <p>{{coins.symbol.toUpperCase()}}</p>
+    <p>{{coins.index}}</p>
+  
+  
+    <img (click)="modalEditar.showModal()"
+      src="../../../../assets/img/editar.png" alt="">
+  
+  
+    <img (click)="BorrarMoneda()"
+      src="../../../../assets/img/borrar.png" alt="">
+  
+  
+    <dialog method="modal" #modalEditar>
+      <app-coinedit (cerrar)="modalEditar.close()" [coins]="coins"></app-coinedit>
+    </dialog>
+  </div>

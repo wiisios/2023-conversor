@@ -1,0 +1,19 @@
+@use "../../../assets/styles/forms.scss";
+img{
+    height: 50px;
+    margin: 10px;
+  }
+  
+  h2{
+    margin: auto;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  #imgs-container{
+    display: flex;
+    justify-content:space-between;
+    width: 100%;
+  }
+  

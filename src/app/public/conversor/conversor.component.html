@@ -1,0 +1,39 @@
+<div id="containerforall">
+
+    <div id="contenedor-assets">
+        <img class="img-convertir" src="../../../assets/img/deslog.png" alt="" (click)="logout()">
+        <div>
+            <img class="img-convertir" [routerLink]="'/history'" src="../../../assets/img/historial.png" alt="">
+            <img class="img-convertir" [routerLink]="'/subscription'" src="../../../assets/img/suscripciones.png" alt="">
+            <img *ngIf="isadmin" class="img-convertir" [routerLink]="'/adminhome'" src="../../../assets/img/Admin.png"
+            alt="">
+
+        </div>
+            
+    </div>
+  
+  <div id="container">
+    <img src="../../../assets/img/logo.png" alt="">
+    <h2>Conversion</h2>
+    <form id="inputs" #form="ngForm" (ngSubmit)="crearConversion()">
+        <input class="input" type="text" name="amount" id="" placeholder="Monto" [(ngModel)]="exchange.originalAmount"
+        #amount="ngModel" required>
+      <div>
+        <select class="select" name="originalCoinid" [(ngModel)]="exchange.originalCoin" required>
+          <option value="" disabled selected>Moneda de origen</option>
+          <option *ngFor="let coin of coins" [value]="coin.symbol">{{ coin.symbol.toUpperCase() }}</option>
+        </select>
+        <select class="select" name="finalCoinid" [(ngModel)]="exchange.finalCoin" required>
+          <option value="" disabled selected>Moneda de destino</option>
+          <option *ngFor="let coin of coins" [value]="coin.symbol">{{ coin.symbol.toUpperCase() }}</option>
+        </select>
+    </div>
+    <p *ngIf="exchange.finalAmount !== 0">{{exchange.originalAmount}} {{exchange.originalCoin}} equivalen a {{exchange.finalAmount
+        }} {{exchange.finalCoin}}</p>
+      <div>
+          <button class="boton" id="agregar" type="submit" [disabled]="form.invalid">Convertir</button>
+        </div>
+        <p *ngIf="exchangesLeft > 0"> Conversiones restantes: {{exchangesLeft}}</p>
+    </form>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<form #form="ngForm" (ngSubmit)="crearUsuario()">
+
+    <h2>Crear Usuario </h2>
+    <div id="contenedor-input">
+  
+      <p class="error"
+        *ngIf="username.invalid && (username.touched || username.dirty) || password.invalid && (password.touched || password.dirty)">
+        Usuario o contraseña no validas</p>
+  
+  
+      <div>
+        <input type="text" name="userName" id="username" placeholder=" " minlength="4" required="true"
+          [(ngModel)]="user.userName" #username="ngModel">
+        <label for="">Username</label>
+      </div>
+  
+  
+      <div>
+        <input type="text" name="Password" id="" placeholder=" " [(ngModel)]="user.password" #password="ngModel">
+        <label for="">Password</label>
+      </div>
+  
+      <select class="input-typeuser" name="Role" [(ngModel)]="user.roleid">
+        <option value="" disabled selected>Role</option>
+        <option *ngFor="let opcion of roleUsuarioOpciones" [value]="opcion.value">{{ opcion.label }}</option>
+      </select>
+  
+      <select class="input-typeuser" name="TypeUser" [(ngModel)]="user.typeUser">
+        <option value="" disabled selected>TypeUser</option>
+        <option *ngFor="let opcion of tipoUsuarioOpciones" [value]="opcion">{{opcion.charAt(0).toUpperCase()+
+          opcion.slice(1)}}</option>
+      </select>
+  
+    </div>
+  
+  
+  
+  
+    <div id="botones">
+      <button class="boton" id="agregar" type="submit" [disabled]="form.invalid">Crear Usuario</button>
+      <button class="boton" id="cancelar" type="button" (click)="cerrar.emit()">Cancelar</button>
+    </div>
+  </form>

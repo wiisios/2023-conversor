@@ -1,0 +1,23 @@
+<div id="containerforall">
+
+    <div>
+        <div id="imgs-container">
+            <img [routerLink]="'/adminhome'"
+            src="../../../assets/img/Admin.png" alt="">
+            
+            <img (click)="modalCrearCoin.showModal()"
+            src="../../../assets/img/anadir_moneda.png" alt="">
+        </div>
+  
+    <h2>Monedas</h2>
+  
+    <ng-container *ngFor="let coin of coins; let i = index">
+      <app-coindetail [coins]="coin"></app-coindetail>
+    </ng-container>
+  
+    <dialog method="modal" #modalCrearCoin>
+      <app-coincreate (cerrar)="modalCrearCoin.close()"></app-coincreate>
+    </dialog>
+  </div>
+
+    </div>

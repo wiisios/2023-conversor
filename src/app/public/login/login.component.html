@@ -1,0 +1,32 @@
+<div id="containerforall">
+    
+  
+  <div id="container">
+    <img src="../../../assets/img/logo.png" alt="">
+    
+    <h2>Acceso</h2>
+    <form id="inputs" #loginForm="ngForm" (ngSubmit)="login()">
+      <p *ngIf="loginFailed" class="error">
+        Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.
+      </p>
+      <div>
+        <input type="email" placeholder=" " required [(ngModel)]="loginData.UserName" #user="ngModel" name="user">
+        <label for=" email">Username</label>
+      </div>
+  
+      <div>
+        <input type="password" placeholder=" " required [(ngModel)]="loginData.Password" #password="ngModel"
+          name="password">
+        <label for="password">Password</label>
+      </div>
+  
+      <a [routerLink]="'/register'" *ngIf="!loading">
+        <p>Todavia no tenes cuenta? Registraste</p>
+      </a>
+      <img *ngIf="loading" src="../../../assets/img/12-dots-scale-rotate.svg" alt="" id="spinner">
+      <button type="submit" id="boton-inicio" [disabled]="loginForm.invalid && loginForm.value.password.length==0"
+        (click)="login()" *ngIf="!loading">Login</button>
+    </form>
+  </div>
+
+</div>

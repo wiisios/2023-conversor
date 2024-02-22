@@ -1,0 +1,35 @@
+<form #form="ngForm" (ngSubmit)="editarCoin()">
+
+    <h2>Editar Moneda</h2>
+    <p class="error"
+      *ngIf="name.invalid && (name.touched || name.dirty) || symbol.invalid && (symbol.touched || symbol.dirty) || index.invalid && (index.touched || index.dirty)  ">
+      Nombre o simbolo no valido</p>
+  
+    <div id="contenedor-input">
+      <div>
+        <input class="input" type="text" name="Name" id="" placeholder=" " [(ngModel)]="coins.name" #name="ngModel"
+          minlength="3" required="true">
+        <label for="">Name</label>
+      </div>
+      <div>
+        <input class="input" type="text" name="Symbol" id="" placeholder=" " [(ngModel)]="coins.symbol" #symbol="ngModel"
+          minlength="2" required="true">
+        <label for="">Symbol</label>
+      </div>
+  
+      <div>
+        <input class="input" type="text" name="Index" id="" placeholder="" [(ngModel)]="coins.index" #index="ngModel"
+          required="true">
+        <label for="">Index</label>
+      </div>
+    </div>
+  
+  
+  
+  
+    <div id="botones">
+      <button class="boton" id="agregar" type="submit" [disabled]="form.invalid">Editar Moneda</button>
+      <!--Si el contacto tiene id es porque ya existe y por lo tanto se va a editar, si no tiene id es porque es un contacto nuevo y se va a agregar-->
+      <button class="boton" id="cancelar" type="button" (click)="cerrar.emit()">Cancelar</button>
+    </div>
+  </form>

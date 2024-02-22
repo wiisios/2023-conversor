@@ -1,0 +1,49 @@
+@use "../../../assets/styles/forms.scss";
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100%;
+    justify-content: space-around; /* Ajusta el espacio entre los elementos */
+    flex-wrap: wrap;
+  }
+  
+  
+  .box {
+    flex: 1; /* Hace que todos los divs hijos tengan el mismo tamaño */
+    width: 60% ;
+    height: 20%;
+    margin: 10px; /* Espacio entre los elementos */
+    background-color: #d8effa;
+    text-align: center;
+  }
+  
+  .container button{
+    width: 211px;
+    height: 44px;
+    background-color: #253B6E;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  p{
+    color: #121212;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .texto{
+    border: 15px;
+    color: #121212;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  img{
+    height: 50px;
+    margin: 10px;
+  }
+  

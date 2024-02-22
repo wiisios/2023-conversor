@@ -1,0 +1,104 @@
+h2{
+    text-align: center;
+    margin-top: 20px;
+  }
+  #contenedor-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  
+  form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    position: relative;
+  }
+  
+  form div{
+    display: flex;
+    position: relative;
+    width: 100%;
+    margin: 10px;
+  }
+  
+  form input,.input-typeuser{
+    width: 100%;
+    height: 36px;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.2);
+    outline: none;
+    color:#706c6c ;
+  
+  
+    &:focus{
+      border: 2px solid rgba(26,115,232);
+      outline: none;
+    }
+  }
+  
+  .input-typeuser{
+    margin: 10px;
+  }
+  
+  form label{
+    font-size: 18px;
+    position: absolute;
+    bottom: 13px;
+    left: 10px;
+    cursor: pointer;
+    color: rgba(0,0,0,0.4);
+    transition: transform 0.2s;
+  }
+  
+  input:focus+label,
+  input:not(:placeholder-shown)+label{
+    transform: translateY(-20px);
+    background: white;
+    font-size: 14px;
+    color: rgba(26,115,232);
+  }
+  
+  input:not(:focus)+label{
+      color: rgba(0,0,0,0.4);
+  }
+  
+  #boton{
+    width: 211px;
+    height: 44px;
+    background-color: #253B6E;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  a{
+    text-decoration: none;
+    color: #050505;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  #botones{
+    display: flex;
+    justify-content: space-around;
+  
+  }
+  
+  .boton{
+    width: 211px;
+    height: 44px;
+    background-color: #253B6E;
+    color: white;
+    border-radius: 5px;
+    margin: 5px;
+  }
+  
+  .error{
+    color: red;
+  }

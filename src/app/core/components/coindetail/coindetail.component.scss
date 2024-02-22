@@ -1,0 +1,27 @@
+div{
+    background-color:  #253B6E;
+    margin : 10px;
+    display: flex;
+    height: 50px;
+    border: 2px solid #d4d3d3;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #d4d3d3;
+    align-items: center;
+  
+    &:hover{
+      box-shadow: 0px 0px 10px 0px #000000;
+    }
+  }
+  
+  p{
+    margin: auto;
+    color: #ffffff;
+    font-size: 20px;
+    width: 17%;
+    text-align: center;
+  }
+  
+  img{
+    margin: auto;
+    height: 80%;
+  }

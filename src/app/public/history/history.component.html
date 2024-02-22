@@ -1,0 +1,50 @@
+<div id="containerforall">
+
+    
+    <img [routerLink]="'/exchange'"
+    src="../../../assets/img/volver_atras.png" alt="">
+    <h1>Historial</h1>
+
+
+
+
+
+
+    
+    <div class="conversion-item-container" *ngIf="exchanges && exchanges.length > 0; else sinConversiones">
+  <div class="conversion-item">
+    <div>
+        <p>conversionId</p>
+    </div>
+    <div>
+        <p>Moneda de origen</p>
+    </div>
+    <div>
+        <p>Moneda de destino</p>
+    </div>
+    <div>
+        <p> Fecha</p>
+    </div>
+    <div>
+        <p>Monto</p>
+    </div>
+    <div>
+        <p>Resultado</p>
+    </div>
+</div>
+</div>
+
+
+
+
+<ng-container *ngFor="let exchange of exchanges; let i = index">
+    <app-historial [exchanges]="exchange"></app-historial>
+</ng-container>
+
+<ng-template #sinConversiones>
+    <p id="sinconv">
+        No hay conversiones
+    </p>
+</ng-template>
+
+</div>

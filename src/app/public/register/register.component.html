@@ -1,0 +1,34 @@
+<div id="containerforall">
+
+  <div id="container">
+    <img src="../../../assets/img/logo.png" alt="">
+  
+    <form #form="ngForm" (ngSubmit)="crearUsuario()">
+  
+      <h2>Registrarse </h2>
+  
+      <p class="error"
+        *ngIf="(username.invalid && (username.touched || username.dirty)) && (password.invalid && (password.touched || password.dirty))">
+        Usuario o contraseña no validas</p>
+  
+      <div>
+        <input type="text" name="userName" id="username" placeholder=" " minlength="4" required="true"
+          [(ngModel)]="registerData.userName" #username="ngModel">
+        <label for="">Username</label>
+      </div>
+  
+      <div>
+        <input type="text" name="Password" id="" placeholder=" " [(ngModel)]="registerData.password" #password="ngModel"
+          minlength="4" required="true">
+        <label for="">Password</label>
+      </div>
+  
+      <div id="botones">
+        <button class="boton" id="agregar" type="submit" [disabled]="form.invalid">Registrarse</button>
+        <button class="boton" id="cancelar" type="button" [routerLink]="['/login']">Cancelar</button>
+      </div>
+    </form>
+  
+  </div>
+
+  </div>

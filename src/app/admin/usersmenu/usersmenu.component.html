@@ -1,0 +1,21 @@
+<div id="containerforall">
+
+    <div class="card-container">
+        <div id="imgs-container">
+            
+            <img [routerLink]="'/adminhome'"
+            src="../../../assets/img/Admin.png" alt="">
+            
+            <img (click)="modalCrear.showModal()" src="../../../assets/img/anadir_usuario.png" alt="">
+        </div>
+    <h2>Usuarios</h2>
+    <ng-container *ngFor="let user of users; let i = index">
+      <app-userdetail [users]="user"></app-userdetail>
+    </ng-container>
+    
+    <dialog method="modal" #modalCrear>
+      <app-usercreate (cerrar)="modalCrear.close()"></app-usercreate>
+    </dialog>
+  </div>
+
+</div>

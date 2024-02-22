@@ -1,0 +1,41 @@
+<form #form="ngForm" (ngSubmit)="editarUsuario()">
+
+    <h2>Editar Usuario </h2>
+    <div id="contenedor-input">
+  
+      <p class="error" *ngIf="username?.invalid && (username?.touched || username.dirty) ">
+        Usuario no valido</p>
+  
+      <div>
+        <input type="text" name="userName" id="" placeholder=" " minlength="4" required="true"
+          [(ngModel)]="users.userName" #username="ngModel">
+        <label for="">Username</label>
+      </div>
+  
+  
+      <select class="input-typeuser" name="Role" [(ngModel)]="users.roleid">
+        <option value="" disabled selected>Role</option>
+        <option *ngFor="let opcion of roleUsuarioOpciones" [value]="opcion.value"> {{ opcion.label }}</option>
+      </select>
+  
+  
+  
+  
+  
+      <select class="input-typeuser" name="TypeUser" [(ngModel)]="users.typeUser">
+        <option value="" disabled selected>TypeUser</option>
+        <option *ngFor="let opcion of tipoUsuarioOpciones" [value]="opcion">{{opcion.charAt(0).toUpperCase()+
+          opcion.slice(1)}}
+        </option>
+      </select>
+  
+    </div>
+  
+  
+  
+    <div id="botones">
+      <button class="boton" id="agregar" type="submit" [disabled]="form.invalid">Editar</button>
+      <!--Si el contacto tiene id es porque ya existe y por lo tanto se va a editar, si no tiene id es porque es un contacto nuevo y se va a agregar-->
+      <button class="boton" id="cancelar" type="button" (click)="cerrar.emit()">Cancelar</button>
+    </div>
+  </form>

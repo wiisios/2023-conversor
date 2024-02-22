@@ -1,0 +1,34 @@
+
+.conversion-item-container {
+    display: grid;
+    gap: 10px; /* Espaciado entre las columnas */
+  }
+  
+  .conversion-item {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Otra opción para establecer columnas iguales */
+    gap: 5px; /* Espaciado entre elementos dentro de una conversion-item */
+    width: 100%; /* Hacer que cada conversion-item ocupe el 100% del ancho */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+  }
+  
+  /* Estilos adicionales para los div internos si es necesario */
+  .conversion-item > div {
+    /* Estilos para cada div interno */
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    width: 250px; /* Hacer que cada div interno ocupe el 100% del ancho */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+  }
+  
+  p{
+    margin: auto;
+    color: #101010;
+    font-size: 20px;
+  }
+  
+  body{
+    width: auto;
+  }
+  

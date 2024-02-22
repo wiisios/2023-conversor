@@ -1,0 +1,55 @@
+@use "../../../assets/styles/variables.scss";
+@use "../../../assets/styles/forms.scss";
+
+body{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #container{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+  
+  #admin-home{
+    margin-top: 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    
+  }
+  
+  #admin-home img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  
+  
+  .options{
+    width: 307px;
+    height: 44px;
+    background-color: #253B6E;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    margin: 40px;
+  }
+  
+  .options img{
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }

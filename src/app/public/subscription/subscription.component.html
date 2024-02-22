@@ -1,0 +1,26 @@
+<div id="containerforall">
+
+  
+  <img [routerLink]="'/exchange'"
+  src="../../../assets/img/volver_atras.png" alt="">
+<div class="container">
+
+
+  <h1>Suscripciones</h1>
+  <p>La suscripción de {{user.userName}} es {{user.typeUser.toUpperCase()}}</p>
+
+  <div class="box">
+    <p class="texto">Con la suscripción FREE podrás realizar 10 conversiones</p>
+    <button type="button" (click)="editarUsuario('free')" [routerLink]="'/exchange'">Obtener Free</button>
+  </div>
+  <div class="box">
+    <p class="texto">Con la suscripción TRIAL podrás realizar 100 conversiones</p>
+    <button type="button" (click)="editarUsuario('trial')" [routerLink]="'/exchange'">Obtener Trial</button>
+  </div>
+  <div class="box">
+    <p class="texto">Con la suscripción PREMIUM no tienes límite de conversiones</p>
+    <button type="button" (click)="editarUsuario('premium')" [routerLink]="'/exchange'">Obtener Premium</button>
+  </div>
+</div>
+
+</div>

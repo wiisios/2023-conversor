@@ -1,0 +1,19 @@
+<div id="container-principal">
+    <p *ngIf="users" class="data">{{users.userName.charAt(0).toUpperCase() + users.userName.slice(1)}}</p>
+    <p class="data">{{users.typeUser.charAt(0).toUpperCase() + users.typeUser.slice(1)}}</p>
+    <div id="contador">
+      <p *ngIf="users.exchangesLeft > 0">{{ users.exchangesLeft }}</p>
+      <img *ngIf="users.exchangesLeft <= 0" src="../../../../assets/img/monedas.png" alt="Imagen">
+    </div>
+  
+  
+    <img class="img-editanddelete" (click)="modalEditar.showModal() "
+      src="../../../../assets/img/editar.png" alt="">
+  
+    <img class="img-editanddelete" (click)="BorrarContacto()"
+      src="../../../../assets/img/borrar.png" alt="">
+  
+    <dialog method="modal" #modalEditar>
+      <app-useredit (cerrar)="modalEditar.close()" [users]="users"></app-useredit>
+    </dialog>
+  </div>
